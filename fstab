@@ -1,0 +1,19 @@
+# Device		Mountpoint	FStype	Options		Dump	Pass#
+#/dev/ada1p2.eli		none		swap	sw		0	0
+/dev/ada0p2.eli		none		swap	sw		0	0
+
+# Other stuff
+
+# makes jdk happy. Add to /boot/loader.conf: fdescfs_load="YES"
+fdescfs   		/dev/fd         fdescfs rw		0       0
+
+# makes some reporting stuff happy
+procfs                    /proc         procfs	rw		0       0
+
+# makes linux emulation stuff happy!
+linprocfs         /compat/linux/proc    linprocfs rw            0       0
+linsysfs      /compat/linux/sys         linsysfs  rw            0       0
+tmpfs    /compat/linux/dev/shm		tmpfs	rw,mode=1777	0	0
+
+
+# EOF
